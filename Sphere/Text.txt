@@ -1,0 +1,140 @@
+static int OpenTcpSocket(char * ipAdd, uint16_t port);
+
+static void ReportError(const char *);
+
+static int Send(int socket, char * string);
+
+
+int OpenTcpSocket(char * ipAdd, uint16_t port)
+{
+
+	int localFd = -1;
+
+	int retFd = -1;
+
+	do {
+	
+
+		if ((localFd = socket(AF_INET, SOCK_STREAM, IPPROTO_TCP)) < 0) {
+
+				ReportError("Sokcet initiation error");
+
+				break;
+
+		}		
+
+		struct sockaddr_in addr;
+
+		memset(&addr, 0, sizeof(addr));
+
+		addr.sin_family = AF_INET;
+
+		addr.sin_addr.s_addr = inet_addr(ipAdd);
+
+		addr.sin_port = htons(port);		
+		
+		if (connect(localFd, (const struct sockaddr *) &addr, sizeof(addr)) < 0) {
+		
+			ReportError("connect error");
+
+			break;
+		
+		}
+
+		retFd = localFd;
+	
+		localFd = -1;
+
+	
+	} while (0);
+
+	
+
+	return retFd;
+}
+
+void ReportError(const char * desc)
+
+{
+
+	Log_Debug("Error: %s\n", desc);
+
+}
+
+int Send(int socket,  char * string)
+{
+	unsigned int bufferLength = strlen(string);
+
+	int result = send(socket, string, bufferLength, 0);
+
+	return result;
+}
+
+
+/////////////////
+
+
+int err = GPIO_OpenAsOutput(MT3620_GPIO8, GPIO_OutputMode_PushPull, GPIO_Value_High);
+
+	int blue = GPIO_OpenAsOutput(MT3620_GPIO10, GPIO_OutputMode_PushPull, GPIO_Value_High);
+
+	if (err < 0 || blue < 0) {
+	
+		Log_Debug("error opengin gpio\n");
+	}
+
+	Log_Debug("Attempting connection \n");
+
+	uint16_t port = 30001;
+
+	int socket = OpenTcpSocket("52.20.16.20", port);
+
+	if (socket < 0) {
+		
+		ReportError("Could not open socket");
+	
+	}
+
+	Log_Debug("Attempting send \n");
+
+	int result;
+
+	int i = 0;
+
+	while (i < 10) {
+
+		++i;
+
+		if ((result = Send(socket, "PONGO")) < 0) {
+
+			ReportError("Could not send message.");
+
+		}
+
+		char data[100];
+
+		memset(data, 0, 100);
+
+		result = recv(socket, data, 100, 0);
+
+		GPIO_SetValue(err, GPIO_Value_High);
+
+		GPIO_SetValue(blue, GPIO_Value_High);
+
+		if (result > 0) {
+			
+	
+			int now = (i % 2 == 0) ? err : blue;
+
+			GPIO_SetValue(now, GPIO_Value_High);
+
+			sleep(1);
+
+			GPIO_SetValue(now, GPIO_Value_Low);
+
+			sleep(1);
+		
+		}
+		
+	}
+	

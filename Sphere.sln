@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28307.421
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Sphere", "Sphere\Sphere.vcxproj", "{8B6F6241-E707-424E-A71A-ECFDA200C949}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|ARM = Debug|ARM
+		Release|ARM = Release|ARM
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{8B6F6241-E707-424E-A71A-ECFDA200C949}.Debug|ARM.ActiveCfg = Debug|ARM
+		{8B6F6241-E707-424E-A71A-ECFDA200C949}.Debug|ARM.Build.0 = Debug|ARM
+		{8B6F6241-E707-424E-A71A-ECFDA200C949}.Release|ARM.ActiveCfg = Release|ARM
+		{8B6F6241-E707-424E-A71A-ECFDA200C949}.Release|ARM.Build.0 = Release|ARM
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {E0D85098-D0C4-4288-ADEA-479B3CCC91EE}
+	EndGlobalSection
+EndGlobal

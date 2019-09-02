@@ -1,0 +1,15 @@
+{
+  "SchemaVersion": 1,
+  "Name" : "Sphere",
+  "ComponentId" : "7cfb2ffa-3289-46b2-9575-d2a707319cf3",
+  "EntryPoint": "/bin/app",
+  "CmdArgs": [],
+  "Capabilities": {
+    "AllowedConnections": ["towel.blinkenlights.nl", "192.168.2.20", "harsimiot.eastus.cloudapp.azure.com"],
+    "AllowedTcpServerPorts": [ 8080, 30001, 15000 ],
+    "Gpio": [ 8, 9, 10, 12, 13 ],
+    "Uart": [],
+    "WifiConfig": false
+  },
+  "ApplicationType":"Default"
+}
