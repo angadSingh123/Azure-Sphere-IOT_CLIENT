@@ -1,3 +1,6 @@
+//This file is adapted from Microsoft Azure Sphere samples github page. 
+//Thanks to MS team.
+
 #pragma once
 #include <errno.h>
 #include <applibs/log.h>
