@@ -383,7 +383,7 @@ int NetStartup() {
 
 	Hints.ai_protocol = IPPROTO_TCP;
 
-	int result =  getaddrinfo("harsimiot.eastus.cloudapp.azure.com", "8080", &Hints, &addrinfo_iot_server);
+	int result =  getaddrinfo("", "", &Hints, &addrinfo_iot_server);
 
 	Log_Debug("%s\n",gai_strerror(result));
 

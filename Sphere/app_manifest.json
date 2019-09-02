@@ -5,7 +5,7 @@
   "EntryPoint": "/bin/app",
   "CmdArgs": [],
   "Capabilities": {
-    "AllowedConnections": ["towel.blinkenlights.nl", "192.168.2.20", "harsimiot.eastus.cloudapp.azure.com"],
+    "AllowedConnections": ["towel.blinkenlights.nl",  "harsimiot.eastus.cloudapp.azure.com"],
     "AllowedTcpServerPorts": [ 8080, 30001, 15000 ],
     "Gpio": [ 8, 9, 10, 12, 13 ],
     "Uart": [],
