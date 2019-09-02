@@ -1,5 +1,5 @@
-//This file is adapted from Microsoft Azure Sphere samples github page. 
-//Thanks to MS team.
+//This file is adapted from Microsoft Azure Sphere samples github pages. The file is called epoll_timerfd_utilities.h and is included in almost every project.
+//Thanks to MS team. 
 
 #pragma once
 #include <errno.h>
