@@ -90,7 +90,7 @@ int GetBytes(Message *restrict msg, char *restrict Array, int maxlen) {
 	return ++currentIndex;
 }
 
-//Convert byte array into a message structure.
+//Convert byte array into a message structure. Return the number of components parsed.
 int ParseMessage(Message* msg, char* byteSource, int lengthstr, char* delim) {
 
 	char returner = 0;

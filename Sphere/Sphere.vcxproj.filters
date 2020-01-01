@@ -31,6 +31,12 @@
     <ClCompile Include="Handler.c">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="thread.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="ledMatrix.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="ConfigurationService.h">
@@ -55,6 +61,12 @@
       <Filter>msg</Filter>
     </ClInclude>
     <ClInclude Include="HardwareDefines.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="thread.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="ledMatrix.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

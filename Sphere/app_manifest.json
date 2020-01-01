@@ -1,15 +1,16 @@
 {
   "SchemaVersion": 1,
-  "Name" : "Sphere",
-  "ComponentId" : "7cfb2ffa-3289-46b2-9575-d2a707319cf3",
+  "Name": "Sphere",
+  "ComponentId": "7cfb2ffa-3289-46b2-9575-d2a707319cf3",
   "EntryPoint": "/bin/app",
   "CmdArgs": [],
   "Capabilities": {
-    "AllowedConnections": ["towel.blinkenlights.nl",  "harsimiot.eastus.cloudapp.azure.com"],
+    "AllowedConnections": [ "towel.blinkenlights.nl", "harsimiot.eastus.cloudapp.azure.com" ],
     "AllowedTcpServerPorts": [ 8080, 30001, 15000 ],
-    "Gpio": [ 8, 9, 10, 12, 13 ],
+    "Gpio": [ 12, 13, 35, 32, 34, 31, 33, 69, 68, 67, 39, 37, 40, 8, 9, 10 ],
     "Uart": [],
-    "WifiConfig": false
+    "WifiConfig": false,
+    "MutableStorage": { "SizeKB": 8 }
   },
-  "ApplicationType":"Default"
+  "ApplicationType": "Default"
 }

@@ -38,9 +38,11 @@
   <PropertyGroup Label="UserMacros" />
   <ItemGroup>
     <ClCompile Include="ConfigurationService.c" />
+    <ClCompile Include="ledMatrix.c" />
     <ClCompile Include="main.c" />
     <ClCompile Include="Handler.c" />
     <ClCompile Include="StreamServer.c" />
+    <ClCompile Include="thread.c" />
     <UpToDateCheckInput Include="app_manifest.json" />
   </ItemGroup>
   <ItemGroup>
@@ -49,9 +51,11 @@
     <ClInclude Include="Handler.h" />
     <ClInclude Include="Command.h" />
     <ClInclude Include="HardwareDefines.h" />
+    <ClInclude Include="ledMatrix.h" />
     <ClInclude Include="message.h" />
     <ClInclude Include="Parametre.h" />
     <ClInclude Include="StreamServer.h" />
+    <ClInclude Include="thread.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets" />

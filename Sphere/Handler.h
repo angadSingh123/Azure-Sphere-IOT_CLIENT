@@ -30,7 +30,7 @@ typedef struct  {
 
 
 //Collects events from the system
-int AwaitNotification(int epoll);
+int AwaitNotification(int epoll, int* time);
 
 //Create a new Epoll instance on the kernel
 int CreateNotifier(void);

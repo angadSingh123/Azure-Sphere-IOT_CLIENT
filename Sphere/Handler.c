@@ -1,10 +1,10 @@
 #include "Handler.h"
 
-int AwaitNotification(int epoll)
+int AwaitNotification(int epoll, int* time)
 {
 	struct epoll_event NewEvent;
 
-	int numberEvents = epoll_wait(epoll, &NewEvent, 1, -1);		
+	int numberEvents = epoll_wait(epoll, &NewEvent, 1, *time);		
 
 	if (numberEvents == 1 && NewEvent.data.ptr != NULL) {		
 
